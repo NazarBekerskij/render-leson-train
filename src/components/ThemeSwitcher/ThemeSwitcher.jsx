@@ -3,7 +3,7 @@ import { Component } from "react";
 class ThemeSwithcer extends Component {
     render() {
 
-    const { isDark } = this.props;
+    const { isDark,  onToggle} = this.props;
 
     const themeStyle = {
         backgroundColor: isDark ? "#222222" : "#ffffff",
@@ -13,7 +13,7 @@ class ThemeSwithcer extends Component {
         return (
             <div style={themeStyle}>
                 <h2>Перемикач теми</h2>
-                <button type="button" onClick={this.props.onToggle}>
+                <button type="button" onClick={onToggle}>
                 {isDark ? "Увімкнути світлу тему" : "Увімкнути темну тему"}
                 </button>
             </div>

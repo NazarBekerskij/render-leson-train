@@ -3,6 +3,10 @@ import { Component } from 'react'
 import Counter from './components/Counter/Counter'
 
 
+import ThemeSwithcer from './components/ThemeSwitcher/ThemeSwitcher'
+
+
+
 class App extends Component {
 
   state = {
@@ -35,13 +39,18 @@ class App extends Component {
 
 
 
-  
+  handleToggle = () => {
+    this.setState((prevState) => ({
+      isDark: !prevState.isDark
+    }))
+  }
 
 
   
 
   render(){
     return(
+      <>
       <div>
         <h1>Інтерактивна панель керування</h1>
         <Counter count={this.state.count} 
@@ -50,6 +59,19 @@ class App extends Component {
         onReset={this.handleReset}
         />
       </div>
+
+
+
+
+      <div>
+      <h2>Інтерактивна панель керування</h2>
+      <ThemeSwithcer
+      isDark={this.state.isDark}
+      onToggle={this.handleToggle}
+      />
+      </div>
+
+  </>
     )
   }
 }

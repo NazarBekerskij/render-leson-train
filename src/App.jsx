@@ -1,80 +1,49 @@
 import './App.css'
 import { Component } from 'react'
+import Title from './components/Title/Title'
 import Counter from './components/Counter/Counter'
 
+class App extends Component{
 
-import ThemeSwithcer from './components/ThemeSwitcher/ThemeSwitcher'
+      state = {
+      count: 0,
+    }
 
-
-
-class App extends Component {
-
-  state = {
-    count: 0,
-    isDark: false,
-  }
-
-
-  handleIncrement = () => {
+  handlePluse = () => {
     this.setState((prevState) => ({
-      count: prevState.count + 1,
+     count: prevState.count + 1    
     }))
   }
 
 
-  handleDecrement = () => {
+  handleMinuse = () => {
     this.setState((prevState) => ({
-      count: prevState.count -1,
+      count: prevState.count -1
     }))
   }
-  
+
 
   handleReset = () => {
-    this.setState({
-      count: 0,
-    })
-  }
-
-/////////////////////////////////////////////////// 2 завдання
-
-
-
-  handleToggle = () => {
-    this.setState((prevState) => ({
-      isDark: !prevState.isDark
+    this.setState(() => ({
+      count: 0
     }))
   }
-
-
-  
-
+    
   render(){
     return(
       <>
-      <div>
-        <h1>Інтерактивна панель керування</h1>
-        <Counter count={this.state.count} 
-        onIncrement={this.handleIncrement}
-        onDecrement={this.handleDecrement}
-        onReset={this.handleReset}
-        />
-      </div>
-
-
-
-
-      <div>
-      <h2>Інтерактивна панель керування</h2>
-      <ThemeSwithcer
-      isDark={this.state.isDark}
-      onToggle={this.handleToggle}
+      <Title/>
+     <p>{this.state.count}</p>
+      <Counter 
+      countPluse={this.handlePluse}
+      countMinuse={this.handleMinuse}
+      countReset={this.handleReset}
       />
-      </div>
-
-  </>
+      </>
     )
   }
 }
+
 
 
 

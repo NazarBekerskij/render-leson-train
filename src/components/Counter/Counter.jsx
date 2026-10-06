@@ -3,18 +3,17 @@ import { Component } from "react";
 
 class Counter extends Component {
     render(){
-        const {counterPluse, counterMinuse, counterReset} = this.props
+        const {countPluse, countMinuse, countReset} = this.props
         return(
             <>
             <div>
-                <button onClick={counterPluse} type="button">+1</button>
-                <button onClick={counterMinuse} type="button">-1</button>
-                <button onClick={counterReset} type="button">reset</button>
+            <button onClick={countPluse} type="button">+1</button>
+            <button onClick={countMinuse} type="button">-1</button>
+            <button onClick={countReset} type="button">reset</button>
             </div>
             </>
         )
     }
 }
-
 
 export default Counter

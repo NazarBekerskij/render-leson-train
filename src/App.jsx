@@ -5,6 +5,8 @@ import Title from './components/Title/Title'
 
 import ThemeSwithcer from './components/ThemeSwitcher/ThemeSwitcher'
 
+import Greeting from './components/Greeting/Greeting'
+
 class App extends Component {
 
   state = {
@@ -46,6 +48,12 @@ class App extends Component {
 
 
       <ThemeSwithcer/>
+
+
+
+
+
+      <Greeting/>
       </>
     )
   }

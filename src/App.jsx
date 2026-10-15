@@ -1,64 +1,26 @@
 import './App.css'
 import { Component } from 'react'
-import Counter from './components/Counter/Counter'
-import Title from './components/Title/Title'
-
-import ThemeSwithcer from './components/ThemeSwitcher/ThemeSwitcher'
-
-import Greeting from './components/Greeting/Greeting'
-
+import initialTodos from "./todo.json"
+// import Info from './components/Info/Info';
+// import TodoList from './components/TodoList/TodoList';
+// import TodoEditor from './components/TodoEditor/TodoEditor';
+// import { nanoid } from "nanoid";
+console.log(initialTodos.completed);
 class App extends Component {
-
-  state = {
-    count: 0,
-  }
-
-
-  handlePluse = () => {
-    this.setState((prevState) => ({
-      count: prevState.count + 1
-    }))
-  }
-
-  handleMinuse = () => {
-    this.setState((prevState) => ({
-      count: prevState.count - 1
-    }))
-  }
+ state = {
+    todos: initialTodos,
+    filter: "",
+  };
 
 
+ 
 
-  handleReset = () => {
-    this.setState(() => ({
-      count: 0,
-    }))
-  }
 
   render(){
     return(
-      <>
-      <Title/>
-      <p>{this.state.count}</p>
-      <Counter
-      countPluse={this.handlePluse}
-      countMinuse={this.handleMinuse}
-      countReset={this.handleReset}
-      />
-
-
-
-      <ThemeSwithcer/>
-
-
-
-
-
-      <Greeting/>
-      </>
+      <h1></h1>
     )
   }
 }
-
-
 
 export default App
